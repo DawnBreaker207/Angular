@@ -3,11 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { ProductsComponent } from './components/products/products.component';
-import { AboutComponent } from './components/about/about.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ProductsComponent } from './pages/products/products.component';
+import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @Component({
   selector: 'app-root',
@@ -27,5 +27,5 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Angu2';
+  title = 'Dawn';
 }
