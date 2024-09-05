@@ -1,8 +1,8 @@
+import { Book } from '@/base/interfaces/common';
 import { Component, Input } from '@angular/core';
-import { Book } from '../../../../admin/state/book.model';
 
 @Component({
-  selector: 'card-book',
+  selector: 'app-card-book',
   templateUrl: './card-book.component.html',
   styleUrl: './card-book.component.scss',
 })

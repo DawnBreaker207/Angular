@@ -1,0 +1,21 @@
+<app-form [formGroup]="loginForm" (submit)="onSubmit()">
+  <app-input
+    label="Email"
+    [formControl]="getFormControl('email')"
+    placeholder="Enter Email"
+    type="text"
+    [errorMessages]="{
+      required: 'Email Required',
+      email: 'Right format email',
+    }"
+  />
+  <app-input
+    label="Password"
+    [formControl]="getFormControl('password')"
+    placeholder="Enter Password"
+    type="text"
+    [errorMessages]="{
+      required: 'Password Required',
+    }"
+  />
+</app-form>

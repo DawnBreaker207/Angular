@@ -5,33 +5,33 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 
-import { BooksService } from './services/books.service';
-import { FormComponent } from './components/common/form/form.component';
-import { ButtonComponent } from './components/common/button/button.component';
-import { InputComponent } from './components/common/input/input.component';
-import { TableComponent } from './components/common/table/table.component';
-import { TableItemComponent } from './components/common/table-item/table-item.component';
-import { DashboardComponent } from './components/books/dashboard/dashboard.component';
-import { AddFormComponent } from './components/books/add-form/add-form.component';
-import { EditFormComponent } from './components/books/edit-form/edit-form.component';
+import { BooksService } from './services/Book/books.service';
+import { CategoriesService } from './services/Category/categories.service';
+
+import { BookListComponent } from './components/books/book-list/book-list.component';
+import { AddBookFormComponent } from './components/books/add-book-form/add-book-form.component';
+import { EditBookFormComponent } from './components/books/edit-book-form/edit-book-form.component';
+import { CategoryListComponent } from './components/categories/category-list/category-list.component';
+import { AddCategoryFormComponent } from './components/categories/add-category-form/add-category-form.component';
+import { EditCategoryFormComponent } from './components/categories/edit-category-form/edit-category-form.component';
+import { BaseModule } from '@/base/base.module';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    AddFormComponent,
-    EditFormComponent,
-    FormComponent,
-    ButtonComponent,
-    InputComponent,
-    TableComponent,
-    TableItemComponent,
+    AddBookFormComponent,
+    EditBookFormComponent,
+    BookListComponent,
+    CategoryListComponent,
+    AddCategoryFormComponent,
+    EditCategoryFormComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BaseModule,
   ],
-  providers: [BooksService],
+  providers: [BooksService, CategoriesService],
 })
 export class AdminModule {}

@@ -1,0 +1,27 @@
+<app-form [formGroup]="registerForm" (submit)="onSubmit()">
+  <app-input
+    label="Name"
+    [formControl]="getFormControl('name')"
+    placeholder="Enter Name"
+    type="text"
+  />
+  <app-input
+    label="Email"
+    [formControl]="getFormControl('email')"
+    placeholder="Enter Email"
+    type="text"
+    [errorMessages]="{
+      required: 'Email Required',
+      email: 'Right format email',
+    }"
+  />
+  <app-input
+    label="Password"
+    [formControl]="getFormControl('password')"
+    placeholder="Enter Password"
+    type="text"
+    [errorMessages]="{
+      required: 'Password Required',
+    }"
+  />
+</app-form>

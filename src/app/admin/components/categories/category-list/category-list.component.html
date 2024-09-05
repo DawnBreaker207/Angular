@@ -1,0 +1,55 @@
+<!-- <table class="w-full text-sm text-center text-gray-500">
+  <thead class="text-xs uppercase text-gray-700 bg-gray-50">
+    <tr>
+      <th class="px-6 py-3">Id</th>
+      <th class="px-6 py-3">Title</th>
+      <th class="px-6 py-3">Author</th>
+      <th class="px-6 py-3">Year</th>
+      <th class="px-6 py-3">Description</th>
+      <th class="px-6 py-3">Thumbnail</th>
+      <th class="px-6 py-3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="paginates$ | async as books; else noData">
+      <ng-container *ngFor="let book of books; index as i">
+        <table-item
+          [bookData]="book"
+          [index]="i + (currentPage - 1) * itemPerPage"
+          (onDel)="onDel($event)"
+        />
+      </ng-container>
+    </ng-container>
+  </tbody>
+</table>
+<div>
+  <button
+    (click)="onPageChange(currentPage - 1)"
+    [disabled]="currentPage === 1"
+  >
+    Previous
+  </button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button
+    (click)="onPageChange(currentPage + 1)"
+    [disabled]="currentPage * itemPerPage >= totalItems"
+  >
+    Next
+  </button>
+</div>
+<ng-template #noData>
+  <tr>
+    <td>No data</td>
+  </tr>
+</ng-template> -->
+<app-admin-table
+  [currentPage]="currentPage"
+  [itemPerPage]="itemPerPage"
+  [paginates$]="paginates$"
+  [totalPages]="totalPages"
+  [totalItems]="totalItems"
+  (Delete)="onDel($event)"
+  (PageChange)="onPageChange($event)"
+  [editPath]="path"
+  [headerTable]="categoryHeader"
+/>

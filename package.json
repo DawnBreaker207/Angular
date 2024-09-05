@@ -3,10 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "format:test": "prettier \"project/**/*.{ts,html,md,scss,json}\" --list-different",
+    "format:write": "prettier \"project/**/*.{ts,html,md,scss,json}\" --write",
+    "analyzer": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/Pet_Project/stats.es2015.json",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -19,8 +23,10 @@
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
     "@ngrx/effects": "^17.2.0",
+    "@ngrx/entity": "^17.2.0",
     "@ngrx/store": "^17.2.0",
     "@ngrx/store-devtools": "^17.2.0",
+    "jwt-decode": "^4.0.0",
     "pet-project": "file:",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -28,10 +34,19 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.6",
+    "@angular-eslint/builder": "17.5.2",
+    "@angular-eslint/eslint-plugin": "17.5.2",
+    "@angular-eslint/eslint-plugin-template": "17.5.2",
+    "@angular-eslint/schematics": "17.5.2",
+    "@angular-eslint/template-parser": "17.5.2",
     "@angular/cli": "^17.3.6",
     "@angular/compiler-cli": "^17.3.0",
+    "@ngrx/schematics": "^18.0.2",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "7.11.0",
+    "@typescript-eslint/parser": "7.11.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -39,7 +54,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
     "tailwindcss": "^3.4.9",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~5.4.2"
   }
 }

@@ -1,13 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './components/books/dashboard/dashboard.component';
-import { AddFormComponent } from './components/books/add-form/add-form.component';
-import { EditFormComponent } from './components/books/edit-form/edit-form.component';
+import { AddBookFormComponent } from './components/books/add-book-form/add-book-form.component';
+import { BookListComponent } from './components/books/book-list/book-list.component';
+import { EditBookFormComponent } from './components/books/edit-book-form/edit-book-form.component';
+import { CategoryListComponent } from './components/categories/category-list/category-list.component';
+import { AddCategoryFormComponent } from './components/categories/add-category-form/add-category-form.component';
+import { EditCategoryFormComponent } from './components/categories/edit-category-form/edit-category-form.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'add', component: AddFormComponent },
-  { path: 'edit/:id', component: EditFormComponent },
+  {
+    path: 'books',
+    children: [
+      { path: '', component: BookListComponent },
+      { path: 'add', component: AddBookFormComponent },
+      { path: 'edit/:id', component: EditBookFormComponent },
+    ],
+  },
+  {
+    path: 'categories',
+    children: [
+      { path: '', component: CategoryListComponent },
+      { path: 'add', component: AddCategoryFormComponent },
+      { path: 'edit/:id', component: EditCategoryFormComponent },
+    ],
+  },
 ];
 
 @NgModule({

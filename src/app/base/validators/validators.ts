@@ -1,6 +1,6 @@
 import { AbstractControl, ValidatorFn } from '@angular/forms';
 
-export const fourDigitValidator = (input: Number): ValidatorFn => {
+export const fourDigitValidator = (input: number): ValidatorFn => {
   return (control: AbstractControl): { [key: string]: any } | null => {
     const value = (control.value || '').toString();
     const pattern = new RegExp(`^\\d{${input}}$`);

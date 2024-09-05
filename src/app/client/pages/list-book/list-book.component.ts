@@ -1,9 +1,10 @@
+import { Book, BookState } from '@/base/interfaces/common';
+import { GetBooks } from '@/state/book/book.action';
+
+import { selectedAllBook } from '@/state/book/book.selector';
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Book, BookState } from '../../../admin/state/book.model';
-import { selectedAllBook } from '../../../admin/state/book.selector';
-import { GetBooks } from '../../../admin/state/book.action';
 
 @Component({
   selector: 'app-list-book',

@@ -1,0 +1,44 @@
+<app-form [formGroup]="bookForm" (submit)="onSubmit()">
+  <app-input
+    label="Title"
+    [formControl]="getFormControl('title')"
+    placeholder="Enter title"
+    type="text"
+    [errorMessages]="{
+      required: 'Title required',
+      minLength: 'Author must have 4 digits',
+    }"
+  />
+  <app-input
+    label="Author"
+    [formControl]="getFormControl('author')"
+    placeholder="Enter Year"
+    type="text"
+    [errorMessages]="{
+      required: 'Author required',
+      minLength: 'Author must have 4 digits',
+    }"
+  />
+  <app-input
+    label="Public_Year"
+    [formControl]="getFormControl('public_year')"
+    placeholder="Enter title"
+    type="text"
+    [errorMessages]="{
+      required: 'Year required',
+      minLength: 'Year must have 4 digits',
+    }"
+  />
+  <app-input
+    label="Description"
+    [formControl]="getFormControl('description')"
+    placeholder="Enter description"
+    type="text"
+  />
+  <app-input
+    label="Thumbnail"
+    [formControl]="getFormControl('thumbnail')"
+    placeholder="Enter Thumbail"
+    type="text"
+  />
+</app-form>
